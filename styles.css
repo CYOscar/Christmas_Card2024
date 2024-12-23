@@ -1,0 +1,127 @@
+body {
+  background-image: url("bg.jpg");
+  background-size: cover;
+}
+
+.front {
+  background: url("winter_scene.jpg") no-repeat center darkred;
+  background-size: cover;
+}
+
+.front,
+.page {
+  background: url("winter_scene.jpg") no-repeat center darkred;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Cookie", serif;
+  font-size: 40px;
+  margin-top: 100px;
+  color: white;
+  text-align: center;
+  display: inline-block;
+}
+
+.message {
+  margin-top: 30px;
+}
+
+h5 {
+  font-family: "Cookie", serif;
+  font-size: 27px;
+}
+
+p {
+  font-size: 20px;
+}
+
+li {
+  font-size: 15px;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+  padding-left: 20px;
+  text-align: center;
+}
+
+ul li::before {
+  content: "\2605"; /* Unicode for solid star */
+  color: gold;
+  margin-right: 10px; /* Space between bullet and text */
+}
+
+.star {
+  font-size: 250px;
+  color: gold; /* Star color */
+  text-align: center;
+  display: inline-block;
+  animation: shine 1.5s infinite alternate;
+}
+
+@keyframes shine {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.5),
+      0 0 15px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 0.7),
+      0 0 40px rgba(255, 215, 0, 0.3);
+  }
+}
+
+.snow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 18;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  top: -10px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+/* Smaller screens (phones) */
+@media (max-width: 480px) {
+  .card {
+    width: 95%;
+    max-width: 300px;
+  }
+
+  .card h1 {
+    font-size: 1.5em;
+  }
+
+  .card .message h5,
+  .card .message p,
+  .card .message ul,
+  .card .message li {
+    font-size: 0.9em;
+  }
+}
+
+.back {
+  background: linear-gradient(
+    to bottom right,
+    #f7e896,
+    #f18e8e
+  ); /* Gradient background for the card */
+}
